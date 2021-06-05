@@ -1,4 +1,4 @@
-package springcore_example;
+package com.spring;
 
 public class HelloBean {
 
