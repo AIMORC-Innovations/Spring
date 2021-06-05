@@ -1,4 +1,4 @@
-package springcore_example;
+package com.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,6 +10,7 @@ public class Main {
  {
 	 context = new ClassPathXmlApplicationContext("bean.xml");
 	 HelloBean hellobean = (HelloBean) context.getBean("HelloBean");
+	
 	 hellobean.sayhello();
  }
 }
