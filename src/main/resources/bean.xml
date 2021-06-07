@@ -2,8 +2,12 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
 xsl:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd">
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+<context:annotation-config/>
 <bean id="hellobean" class="com.spring.HelloBean">
 <property name="name" value="world"/>
 </bean>
@@ -20,5 +24,29 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 <bean id="student3" class ="com.spring.StudentConstructor">
 <constructor-arg name="studentname" value="Hamsa"/>
 <constructor-arg name="studentid" value="14"/>
+</bean>
+<bean id="student4" class ="com.spring.StudentConstructor">
+<constructor-arg name="studentid" value="25"/>
+</bean>
+<bean id="student5" class ="com.spring.Student">
+<property name="studentid" value="40"/>
+<property name="exam">
+<bean class= "com.spring.Exam"></bean>
+</property>
+</bean>
+<bean id = "resultobject" class = "com.spring.Result"></bean><!-- -object of result class -->
+<bean id="student6" class ="com.spring.Student">
+<property name="studentname" value="Keerthana Yadunath"/>
+<property name="studentid" value="05"/>
+<property name="result" ref="resultobject"/>
+</bean>
+<bean id="student7" class ="com.spring.StudentConstructor">
+<constructor-arg name="studentname" value="Hamsa Keerthana"/>
+<constructor-arg name="studentid" value="07"/>
+<property name="res" ref="resultobject"/>
+</bean>
+<bean id="result" class ="com.spring.Result">
+</bean>
+<bean id="student9" class ="com.spring.Student" autowire="byName">
 </bean>
 </beans>

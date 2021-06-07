@@ -22,7 +22,25 @@ public class Main {
 			StudentConstructor keerthanadetails = context.getBean("student3",StudentConstructor.class);
 			keerthanadetails.displayStudentdisplay();
 			
+			StudentConstructor onlyid = context.getBean("student4",StudentConstructor.class);
+			onlyid.displayStudentdisplay();
+			
+			Student examid = context.getBean("student5",Student.class);
+			examid.examId();
+			
+			Student resultid = context.getBean("student6",Student.class);
+			resultid.resultTime();
+			
+			StudentConstructor results = context.getBean("student7",StudentConstructor.class);
+			results.resultTime();
 	
+			/*
+			 * Student resultbytype = context.getBean("student8",Student.class);
+			 * resultbytype.resultTime();
+			 */
+			
+			Student resultbyname = context.getBean("student9",Student.class);
+			resultbyname.resultTime();
 	}
 
 }
