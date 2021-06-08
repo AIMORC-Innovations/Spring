@@ -4,8 +4,7 @@
 xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
 xsl:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="HelloBean" class="com.spring.HelloBean">
+<bean id="hellobean" class="com.spring.HelloBean">
 <property name="name" value="world"/>
 </bean>
-
 </beans>
