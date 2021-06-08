@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+	<context:component-scan
+		base-package="com.Spring.demo"></context:component-scan><!-- This is annotatioin base configuration 
+		in base package mention the Package name -->
+	<bean name="car" class="com.spring.demo.car"></bean>
+	
+	<bean name="bike" class="com.spring.demo.bike"></bean><!-- name with class -->
+	
+	<bean id="vehicle" class="com.spring.demo.bike"></bean><!--Id vehicle (interface which has 
+		two class car and bike Bike) is mentioned with package Or class name -->
+		
+	<bean id="tyre" class="com.spring.demo.Tyre"></bean>
+	
+	<!-- <property name="brand" value="Falcon"></property>__Setter Injection 
+		__ Brand is property of class tyre to get that ,We are setting the property 
+		name and we re setting value for it -->
+	<!-- <constructor-arg value="MRF"></constructor-arg<!-constructor Injection -->
+
+</beans>
