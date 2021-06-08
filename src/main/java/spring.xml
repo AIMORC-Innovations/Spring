@@ -24,4 +24,10 @@
 		name and we re setting value for it -->
 	<!-- <constructor-arg value="MRF"></constructor-arg<!-constructor Injection -->
 
+<context:component-scan
+		base-package="com.Spring.Example.demo1"></context:component-scan><!-- 
+		This is annotatioin base configuration in base package mention the Package 
+		name -->
+
+	<bean id="vehicle" class="com.spring.demo.car"></bean> <!-- // This is xml configuration. -->
 </beans>
