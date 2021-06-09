@@ -1,10 +1,12 @@
 package com.spring;
+import java.sql.SQLException;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws ClassNotFoundException, SQLException
 	{
 		
 	ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");	
@@ -45,11 +47,10 @@ public class Main {
 			StudentConstructor examconstructor = context.getBean("student10",StudentConstructor.class);
 			examconstructor.examId();
 			 
-			/*
-			 * StudentAutowire atautowireconstructor =
-			 * context.getBean("student11",StudentAutowire.class);
-			 * atautowireconstructor.examId();
-			 */
+			
+			StudentAutowire atautowireconstructor =context.getBean("student11",StudentAutowire.class);
+			 atautowireconstructor.examId();
+			 
 			
 			StudentAutowire atautowiresetter = context.getBean("student12",StudentAutowire.class);
 			atautowiresetter.examId();
@@ -57,15 +58,18 @@ public class Main {
 			StudentAutowire examdetails = context.getBean("student13",StudentAutowire.class);
 			examdetails.examId();
 			
+			ApplicationContext context1 = new ClassPathXmlApplicationContext("studentdao.xml");	
+			System.out.println("DB Connection loaded");		
+			
+			StudentDAO studentdao = context1.getBean("studentDao",StudentDAO.class);
+			studentdao.logindetails();
+			
 			
 			
 			
 		
 			
-			/*
-			 * StudentAutowire exautobyname =
-			 * context.getBean("student11",StudentAutowire.class); exautobyname.examId();
-			 */
+			
 	}
 
 }
