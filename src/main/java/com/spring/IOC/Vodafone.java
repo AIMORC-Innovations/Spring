@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.IOC;
 
 public class Vodafone implements Sim {
 
@@ -7,8 +7,8 @@ public class Vodafone implements Sim {
 		
 	}
 
-	public void data() {
-		System.out.println("Browsing using Vodafone");
+	public String data() {
+		return "dialy 1 GB of data can be used";
 		
 	}
 }

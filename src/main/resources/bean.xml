@@ -7,94 +7,92 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 <context:annotation-config/>
+<context:component-scan base-package="com.spring.beanscope"/>
 
  <import resource="studentdao.xml"/> 
                                    <!-- IOC -->
-<bean id="hellobean" class="com.spring.HelloBean">
+<bean id="hellobean" class="com.spring.IOC.HelloBean">
 <property name="name" value="world"/>
 </bean>
 
-<!--  <bean id="sim" class="com.spring.Vodafone"></bean>
-<bean id="airtel" class="com.spring.Airtel"></bean> -->
-
                                    <!-- dependency setter injection on literals -->
-<bean id="student1" class ="com.spring.Student">
+<bean id="student1" class ="com.spring.DI.Student">
 <property name="studentname" value="Keerthana"/>
 <property name="studentid" value="21"/>
 </bean>
 
-<bean id="student2" class ="com.spring.Student">
+<bean id="student2" class ="com.spring.DI.Student">
 <property name="studentname" value="Dimple"/>
 <property name="studentid" value="18"/>
 </bean>
 
                                    <!-- dependency constructor injection on literals -->
-<bean id="student3" class ="com.spring.StudentConstructor">
+<bean id="student3" class ="com.spring.DI.StudentConstructor">
 <constructor-arg name="studentname" value="Hamsa"/>
 <constructor-arg name="studentid" value="14"/>
 </bean>
 
-<bean id="student4" class ="com.spring.StudentConstructor">
+<bean id="student4" class ="com.spring.DI.StudentConstructor">
 <constructor-arg name="studentid" value="25"/>
 </bean>
                                    <!-- dependency setter injection on objective -->
-<bean id="student5" class ="com.spring.Student">
+<bean id="student5" class ="com.spring.DI.Student">
 <property name="studentid" value="40"/>
 <property name="exam">
-<bean class= "com.spring.Exam"></bean>
+<bean class= "com.spring.DI.Exam"></bean>
 </property>
 </bean>
 
                         <!-- dependency setter and constructor injection on objective for creating same class objects in multiple classes -->
-<bean id = "resultobject" class = "com.spring.Result"></bean>
-<bean id="student6" class ="com.spring.Student">
+<bean id = "resultobject" class = "com.spring.DI.Result"></bean>
+<bean id="student6" class ="com.spring.DI.Student">
 <property name="studentname" value="Keerthana Yadunath"/>
 <property name="studentid" value="05"/>
 <property name="result" ref="resultobject"/>
 </bean>
  
-<bean id="student7" class ="com.spring.StudentConstructor">
+<bean id="student7" class ="com.spring.DI.StudentConstructor">
 <constructor-arg name="studentname" value="Hamsa Keerthana"/>
 <constructor-arg name="studentid" value="07"/>
 <property name="res" ref="resultobject"/>
 </bean>
 
                           <!-- autowire byname property of student class -->
-<bean id="result" class ="com.spring.Result">
+<bean id="result" class ="com.spring.DI.Result">
 </bean>
-<bean id="student8" class ="com.spring.Student" autowire="byName">
+<bean id="student8" class ="com.spring.DI.Student" autowire="byName">
 </bean>
 
                         <!-- autowire byname property of student constructor  class -->
-<bean id="res" class ="com.spring.Result">
+<bean id="res" class ="com.spring.DI.Result">
 </bean>
-<bean id="student9" class ="com.spring.StudentConstructor" autowire="byName">
+<bean id="student9" class ="com.spring.DI.StudentConstructor" autowire="byName">
 </bean>
 
                        <!-- autowire constructor property of student constructor  class -->               
-<bean id="examobject" class ="com.spring.Exam">
+<bean id="examobject" class ="com.spring.DI.Exam">
 </bean>
- <bean id="student10" class ="com.spring.StudentConstructor" autowire="constructor">
+ <bean id="student10" class ="com.spring.DI.StudentConstructor" autowire="constructor">
 </bean> 
 
                       <!-- @autowire  for constructor property of student Autowire class -->   
- <bean id="student11" class ="com.spring.StudentAutowire">
+ <bean id="student11" class ="com.spring.DI.StudentAutowire">
 </bean> 
 
                        <!-- @autowire  for setter method of student Autowire class --> 
- <bean id="student12" class ="com.spring.StudentAutowire">
+ <bean id="student12" class ="com.spring.DI.StudentAutowire">
 </bean>
 
                         <!-- @autowire  for different object use @qualifier --> 
-<bean id="Examdetails1" class ="com.spring.Exam">
+<bean id="Examdetails1" class ="com.spring.DI.Exam">
 <property name="examid" value="41"/>
 <property name="examCenter" value="Mysuru"/>
  </bean> 
  
-<bean id="Examdetails2" class ="com.spring.Exam">
+<bean id="Examdetails2" class ="com.spring.DI.Exam">
 <property name="examid" value="25"/>
 <property name="examCenter" value="Bengaluru"/>
  </bean> 
  
-<bean id="student13" class ="com.spring.StudentAutowire"></bean>
+<bean id="student13" class ="com.spring.DI.StudentAutowire"></bean>
 </beans>
