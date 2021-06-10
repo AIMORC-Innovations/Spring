@@ -27,8 +27,10 @@ public class Main {
 			StudentConstructor onlyid = context.getBean("student4",StudentConstructor.class);
 			onlyid.displayStudentdisplay();
 			
-		    Student examid = context.getBean("student5",Student.class);
-			examid.examId();
+			
+			  Student examid = context.getBean("student5",Student.class); 
+			  examid.examId();
+			 
 			
 			
 			 Student resultid = context.getBean("student6",Student.class);
@@ -57,11 +59,9 @@ public class Main {
 			
 			StudentAutowire examdetails = context.getBean("student13",StudentAutowire.class);
 			examdetails.examId();
+		
 			
-			ApplicationContext context1 = new ClassPathXmlApplicationContext("studentdao.xml");	
-			System.out.println("DB Connection loaded");		
-			
-			StudentDAO studentdao = context1.getBean("studentDao",StudentDAO.class);
+			StudentDAO studentdao = context.getBean("studentDao",StudentDAO.class);
 			studentdao.logindetails();
 			
 			

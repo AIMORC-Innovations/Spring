@@ -1,5 +1,8 @@
 package com.spring;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Student {
@@ -44,5 +47,5 @@ public class Student {
 		result.Resultdetails();
 		System.out.println("Your Student ID and Student Name for the result is " + studentid + studentname);
 	}
-
+	
 }
