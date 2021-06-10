@@ -7,6 +7,19 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="q" class="com.javatpoint.Question">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a Platform</value>
+				<value>Java is an Island of Indonasia</value>
+			</list>
+		</constructor-arg>  
+        
+        </bean>
 	<context:component-scan
 		base-package="com.Spring.demo"></context:component-scan><!-- This is annotatioin base configuration 
 		in base package mention the Package name -->
