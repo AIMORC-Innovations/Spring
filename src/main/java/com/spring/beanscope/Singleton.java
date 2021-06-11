@@ -8,6 +8,14 @@ import org.springframework.stereotype.Component;
 @Scope
 public class Singleton {
 
+	public Prototype getPrototype() {
+		return prototype;
+	}
+
+	public void setPrototype(Prototype prototype) {
+		this.prototype = prototype;
+	}
+
 	@Autowired
 	private Prototype prototype;
 	

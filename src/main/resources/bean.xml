@@ -95,4 +95,14 @@ http://www.springframework.org/schema/context/spring-context.xsd">
  </bean> 
  
 <bean id="student13" class ="com.spring.DI.StudentAutowire"></bean>
+
+                           <!-- Loose coupling --> 
+<bean id = "airtelobject" class = "com.spring.loosecoupling.Airtel"></bean>
+
+<bean id = "vodafoneobject" class = "com.spring.loosecoupling.Vodafone"></bean>
+
+<bean id="mobile" class ="com.spring.loosecoupling.Mobile">
+<property name="sim" ref="vodafoneobject"/>
+</bean>
+
 </beans>

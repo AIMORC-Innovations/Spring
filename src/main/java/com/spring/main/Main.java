@@ -13,6 +13,7 @@ import com.spring.IOC.HelloBean;
 import com.spring.beanscope.Prototype;
 import com.spring.beanscope.Singleton;
 import com.spring.beanscope.StudentDAO;
+import com.spring.loosecoupling.Mobile;
 
 public class Main {
 
@@ -82,7 +83,15 @@ public class Main {
 		} else {
 			System.out.println("Both the objects are different........");
 		}
-
+        
+		Singleton singleton3 = context.getBean("singleton", Singleton.class);
+		System.out.println(singleton3.getPrototype());
+		System.out.println(singleton3.getPrototype());
+		
+		Mobile mob = context.getBean("mobile", Mobile.class);
+		mob.calling();
+		mob.data();
+		
 		((AbstractApplicationContext) context).close();
 
 	}
