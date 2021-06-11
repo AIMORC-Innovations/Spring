@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        
+        
+      <!--//   Settter bean  //-->
+      
+      <!--Proprty mean spring is internally looking for the SETTER method  -->
+        <!-- <bean id ="student" class="com.Spring.Example.SetterConstForLiteral.Student">
+        <property name="studentName" value="Chandana Kaushik"></property>
+        <property name="id" value="24"></property>
+      <property name="id" value="4"></property> We cant set multiple property definitions for same property'id'
+        </bean> -->
+        
+        <!-- 
+        We are setting property with different value for liter of class by creating different bean
+        <bean id ="chandu" class="com.Spring.Example.SetterConstForLiteral.Student">
+        <property name="studentName" value="Chanduu"></property>
+        <property name="id" value="4"></property>
+        </bean> -->
+        
+ <!--//   Settter bean  //--> 
+ 
+ 
+ <!--// Constructor bean  -->
+ <bean id ="student" class="com.Spring.Example.SetterConstForLiteral.Student">
+ <constructor-arg name="studentName" value="Chandana"></constructor-arg>
+  <constructor-arg name="id" value="1"></constructor-arg>
+ </bean>
+ <bean id ="chandu" class="com.Spring.Example.SetterConstForLiteral.Student">
+   <constructor-arg name="id" value="1"></constructor-arg>
+ </bean>
+  <!--// Constructor bean  -->
+ 
+ 
+  </beans>
