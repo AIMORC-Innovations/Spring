@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 import com.spring.DI.Student;
 import com.spring.DI.StudentAutowire;
 import com.spring.DI.StudentConstructor;
@@ -91,6 +92,8 @@ public class Main {
 		Mobile mob = context.getBean("mobile", Mobile.class);
 		mob.calling();
 		mob.data();
+		
+		
 		
 		((AbstractApplicationContext) context).close();
 
